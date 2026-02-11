@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小音像素陪伴（验收版）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="scene-panel">
+      <canvas id="scene" width="640" height="400" aria-label="小音房间场景"></canvas>
+    </section>
+
+    <aside class="ui-panel">
+      <h1>小音陪伴面板</h1>
+
+      <section>
+        <h2>对话</h2>
+        <div id="dialog" role="log" aria-live="polite"></div>
+      </section>
+
+      <section class="action-grid">
+        <button id="btn_pc" type="button">玩电脑</button>
+        <button id="btn_eat" type="button">吃饭</button>
+        <button id="btn_drink" type="button">喝水</button>
+        <button id="btn_music" type="button">听音乐</button>
+      </section>
+
+      <section class="bars">
+        <label for="bar_affection">好感度</label>
+        <progress id="bar_affection" max="100" value="0"></progress>
+
+        <label for="bar_hunger">饱腹度</label>
+        <progress id="bar_hunger" max="100" value="0"></progress>
+      </section>
+
+      <section class="debug-tools">
+        <h2>自测按钮</h2>
+        <div class="action-grid debug-grid">
+          <button id="btn_sim_offline" type="button">Simulate +5h offline</button>
+          <button id="btn_sim_day" type="button">Simulate new day</button>
+          <button id="btn_reset_save" type="button">Reset save</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>调试区</h2>
+        <pre id="debug"></pre>
+      </section>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
