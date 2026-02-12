@@ -1,0 +1,113 @@
+:root {
+  --bg: #191d2c;
+  --panel: #2a324b;
+  --text: #edf2ff;
+  --muted: #a9b4d7;
+  --line: #4c5887;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(circle at top, #293457, var(--bg));
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+.left-pane {
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #10152a;
+}
+
+#scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.right-pane {
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.panel-block {
+  border: 1px solid #5c6797;
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.panel-block h2 {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#dialog {
+  min-height: 56px;
+  max-height: 120px;
+  overflow: auto;
+  line-height: 1.45;
+}
+
+.actions {
+  display: grid;
+  gap: 8px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid #7081bb;
+  border-radius: 8px;
+  background: #3b4670;
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+progress {
+  width: 100%;
+  height: 14px;
+}
+
+#debug {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+@media (max-width: 920px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
